@@ -1,0 +1,39 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "mercury-parser",
+      "image": "362133112692.dkr.ecr.eu-west-1.amazonaws.com/mercury-parser:%BUILD_NUMBER%",
+      "memoryReservation": 500,
+      "memory": 500,
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 3000,
+          "containerPort": 3000,
+          "protocol": "tcp"
+        }
+      ],
+      "entryPoint": [
+        "sh",
+        "-c"
+      ],
+      "command": [
+        "npm run start"
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "mercury-parser",
+          "awslogs-region": "eu-west-1",
+          "awslogs-stream-prefix": "mercury-parser"
+        }
+      }
+    }
+  ],
+  "memory": "500",
+  "family": "mercury-parser",
+  "networkMode": "host",
+  "cpu": "256",
+  "volumes": [],
+  "taskRoleArn": ""
+}
