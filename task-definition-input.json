@@ -2,7 +2,7 @@
   "containerDefinitions": [
     {
       "name": "mercury-parser",
-      "image": "362133112692.dkr.ecr.eu-west-1.amazonaws.com/mercury-parser:%BUILD_NUMBER%",
+      "image": "362133112692.dkr.ecr.eu-west-1.amazonaws.com/mercury-parser:1",
       "memoryReservation": 500,
       "memory": 500,
       "essential": true,
